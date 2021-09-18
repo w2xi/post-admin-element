@@ -62,11 +62,12 @@ export default {
 
 <style scoped>
 .form-container {
-	position: relative;
+	position: absolute;
 	width:  500px;
 	height: 350px;
-	margin: 300px auto;
-	padding: 10px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 	box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, .1);
 }
 
@@ -84,5 +85,6 @@ export default {
 
 .form-action {
 	text-align: right;
+	margin-top: 30px;
 }
 </style>
