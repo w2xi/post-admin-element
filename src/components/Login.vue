@@ -1,13 +1,21 @@
 <template>
 	<div class="form-container">
-		<el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" class="demo-ruleForm">
+		<img class="logo" src="../assets/logo.png" alt="logo" />
+		<el-form 
+			:model="ruleForm" 
+			status-icon 
+			:rules="rules" 
+			ref="ruleForm" 
+			class="login-form"
+		>
 			<el-form-item prop="username">
-		    <el-input type="text" v-model="ruleForm.username" autocomplete="off"></el-input>
+		    <el-input type="text" prefix-icon="el-icon-user" v-model="ruleForm.username" autocomplete="off">
+		    </el-input>
 		  </el-form-item>
 		  <el-form-item prop="password">
-		    <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
+		    <el-input type="password" prefix-icon="el-icon-lock" v-model="ruleForm.password" show-password autocomplete="off"></el-input>
 		  </el-form-item>
-		  <el-form-item>
+		  <el-form-item class="form-action">
 		    <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
 		    <el-button @click="resetForm('ruleForm')">重置</el-button>
 		  </el-form-item>
@@ -28,7 +36,8 @@ export default {
     			{ required: true, message: '请输入用户名', trigger: 'blur' }
     		],
     		password: [
-    			{ required: true, message: '请输入密码', trigger: 'blur' }
+    			{ required: true, message: '请输入密码', trigger: 'blur' },
+    			{ min: 6, message: '长度至少为6个字符', trigger: 'blur' }
     		]
     	}
     }
@@ -53,14 +62,27 @@ export default {
 
 <style scoped>
 .form-container {
+	position: relative;
 	width:  500px;
-	height: 400px;
-	margin: 200px auto;
+	height: 350px;
+	margin: 300px auto;
 	padding: 10px;
 	box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, .1);
 }
 
-.el-form {
-	margin-top: 100px;
+.logo {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.login-form {
+	width: 90%;
+	margin: 150px auto;
+}
+
+.form-action {
+	text-align: right;
 }
 </style>
