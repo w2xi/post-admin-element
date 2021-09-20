@@ -5,12 +5,11 @@
 </template>
 
 <script>
-import AppLogin from '@/components/Login'
 
 export default {
   name: 'Login',
   components: {
-    AppLogin
+    
   }
 }
 </script>

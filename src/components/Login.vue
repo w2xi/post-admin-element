@@ -35,8 +35,8 @@ export default {
   data() {
     return {
     	loginForm: {
-    		username: '',
-    		password: '',
+    		username: 'admin',
+    		password: '123456',
     	},
     	rules: {
     		username: [
@@ -59,9 +59,7 @@ export default {
  					const { data: res } = await this.$http.post('login', this.loginForm)
 
  					if ( res.meta.status === 200 ){
- 						localStorage.username = res.data.username
- 						localStorage.uid = res.data.id  
- 						localStorage.token = res.data.token
+ 						sessionStorage.token = res.data.token
 
  						this.$message({
  							type: 'success',
@@ -82,15 +80,8 @@ export default {
  							showClose: true,
  						})
  					}
-        } else {
-          this.$message({
-          	type: 'error',
-          	message: 'error submit!!',
-          	showClose: true,
-        	})
-          return false;
-        }
-      });
+        } 
+      })
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
