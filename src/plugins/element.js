@@ -26,6 +26,11 @@ import {
   Loading,
 	Message,
 	MessageBox,
+  Tag,
+  Tree,
+  Divider,
+  Select,
+  Option
 } from 'element-ui'
 
 Vue.use(Button)
@@ -52,6 +57,11 @@ Vue.use(Pagination)
 Vue.use(Tooltip)
 Vue.use(Dialog)
 Vue.use(Loading.directive)
+Vue.use(Tag)
+Vue.use(Tree)
+Vue.use(Divider)
+Vue.use(Select)
+Vue.use(Option)
 
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
