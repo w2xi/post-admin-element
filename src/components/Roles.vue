@@ -27,7 +27,7 @@
 					<template slot-scope="scope">
 						<template v-for="(child1, index1) of scope.row.children">
 							<!-- 分割线 -->
-							<el-divider v-if="scope.row.children.length > 1 && index1 !== 0"></el-divider>
+							<el-divider v-if="scope.row.children.length > 1 && index1 !== 0" :key="child1.id"></el-divider>
 							<el-row :key="child1.id">
 								<!-- 一级权限 -->
 								<el-col :span="5" class="expand-col-right">
@@ -37,7 +37,7 @@
 								<el-col :span="19">
 									<template v-for="(child2, index2) of child1.children">
 										<!-- 分割线 -->
-										<el-divider v-if="child1.children.length > 1 && index2 !== 0"></el-divider>
+										<el-divider v-if="child1.children.length > 1 && index2 !== 0" :key="child2.id"></el-divider>
 										<el-row :key="child2.id">
 											<!-- 二级权限 -->
 											<el-col :span="5">

@@ -7,6 +7,7 @@ import './assets/styles/normalized.css'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/styles/global.css'
 import axios from 'axios'
+import ZkTable from 'vue-table-with-tree-grid'
 
 Vue.config.productionTip = false
 
@@ -16,6 +17,8 @@ axios.interceptors.request.use(config => {
 })
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 Vue.prototype.$http = axios
+
+Vue.component('tree-table', ZkTable)
 
 new Vue({
 	router,
